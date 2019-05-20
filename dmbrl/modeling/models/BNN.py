@@ -9,9 +9,9 @@ import numpy as np
 from tqdm import trange
 from scipy.io import savemat, loadmat
 
-from dmbrl.modeling.utils import TensorStandardScaler
-from dmbrl.modeling.layers import FC
-from dmbrl.misc.DotmapUtils import *
+from handful.dmbrl.modeling.utils import TensorStandardScaler
+from handful.dmbrl.modeling.layers import FC
+from handful.dmbrl.misc.DotmapUtils import *
 
 
 class BNN:
