@@ -8,15 +8,13 @@ import pprint
 
 from dotmap import DotMap
 
-import sys
-sys.path.insert(0, '/content/handful-of-trials/dmbrl')
-
 from dmbrl.misc.MBExp import MBExperiment
 from dmbrl.controllers.MPC import MPC
 from dmbrl.config import create_config
 
 
 def main(env, ctrl_type, ctrl_args, overrides, logdir):
+    env = 'mario'
     ctrl_args = DotMap(**{key: val for (key, val) in ctrl_args})
     cfg = create_config(env, ctrl_type, ctrl_args, overrides, logdir)
     cfg.pprint()
