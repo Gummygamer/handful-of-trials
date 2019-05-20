@@ -9,7 +9,7 @@ import pprint
 from dotmap import DotMap
 
 import sys
-sys.path.insert(0, 'handful-of-trials/dmbrl')
+sys.path.insert(0, '/content/handful-of-trials/dmbrl')
 
 from dmbrl.misc.MBExp import MBExperiment
 from dmbrl.controllers.MPC import MPC
