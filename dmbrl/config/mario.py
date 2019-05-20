@@ -12,7 +12,7 @@ from dmbrl.modeling.layers import FC
 import dmbrl.env
 
 
-class HalfCheetahConfigModule:
+class MarioConfigModule:
     ENV_NAME = "MBRLHalfCheetah-v0"
     TASK_HORIZON = 1000
     NTRAIN_ITERS = 300
@@ -96,4 +96,4 @@ class HalfCheetahConfigModule:
         return model
 
 
-CONFIG_MODULE = HalfCheetahConfigModule
+CONFIG_MODULE = MarioConfigModule
