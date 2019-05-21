@@ -44,7 +44,28 @@ class MarioConfigModule:
         }
 
 
-    def nn_constructor(self, model_init_cfg):
+    @staticmethod
+    def obs_preproc(obs):
+        return obs
+
+    @staticmethod
+    def obs_postproc(obs, pred):
+        return obs,pred
+
+    @staticmethod
+    def targ_proc(obs, next_obs):
+        return np.concatenate([next_obs[:, :1], next_obs[:, 1:] - obs[:, 1:]], axis=1)
+
+    @staticmethod
+    def obs_cost_fn(obs):
+        return -obs[:, 0]
+
+    @staticmethod
+    def ac_cost_fn(acs):
+        if isinstance(acs, np.ndarray):
+            return 0.1 * np.sum(np.square(acs), axis=1)
+        else:
+            return 0.1 * tf.reduce_sum(tf.square(acs), axis=1)ef nn_constructor(self, model_init_cfg):
         model = get_required_argument(model_init_cfg, "model_class", "Must provide model class")(DotMap(
             name="model", num_networks=get_required_argument(model_init_cfg, "num_nets", "Must provide ensemble size"),
             sess=self.SESS, load_model=model_init_cfg.get("load_model", False),
