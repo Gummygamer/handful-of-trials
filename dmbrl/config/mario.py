@@ -50,7 +50,7 @@ class MarioConfigModule:
 
     @staticmethod
     def obs_postproc(obs, pred):
-        return obs,pred
+        return obs + pred
 
     @staticmethod
     def targ_proc(obs, next_obs):
