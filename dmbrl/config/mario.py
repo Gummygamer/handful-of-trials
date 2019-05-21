@@ -26,7 +26,7 @@ class MarioConfigModule:
 
     def __init__(self):
         self.ENV = gym_super_mario_bros.make('SuperMarioBros-v0')
-        self.ENV = BinarySpaceToDiscreteSpaceEnv(env, SIMPLE_MOVEMENT)
+        self.ENV = BinarySpaceToDiscreteSpaceEnv(self.ENV, SIMPLE_MOVEMENT)
         cfg = tf.ConfigProto()
         cfg.gpu_options.allow_growth = True
         self.SESS = tf.Session(config=cfg)
