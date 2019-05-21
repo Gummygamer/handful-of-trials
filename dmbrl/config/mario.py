@@ -7,9 +7,9 @@ import tensorflow as tf
 from dotmap import DotMap
 import gym
 
-from dmbrl.misc.DotmapUtils import get_required_argument
-from dmbrl.modeling.layers import FC
-import dmbrl.env
+from handful.dmbrl.misc.DotmapUtils import get_required_argument
+from handful.dmbrl.modeling.layers import FC
+import handful.dmbrl.env
 
 from nes_py.wrappers import BinarySpaceToDiscreteSpaceEnv
 import gym_super_mario_bros
