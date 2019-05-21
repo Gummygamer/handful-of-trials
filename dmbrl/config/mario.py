@@ -65,7 +65,8 @@ class MarioConfigModule:
         if isinstance(acs, np.ndarray):
             return 0.1 * np.sum(np.square(acs), axis=1)
         else:
-            return 0.1 * tf.reduce_sum(tf.square(acs), axis=1)ef nn_constructor(self, model_init_cfg):
+            return 0.1 * tf.reduce_sum(tf.square(acs), axis=1)
+        nn_constructor(self, model_init_cfg):
         model = get_required_argument(model_init_cfg, "model_class", "Must provide model class")(DotMap(
             name="model", num_networks=get_required_argument(model_init_cfg, "num_nets", "Must provide ensemble size"),
             sess=self.SESS, load_model=model_init_cfg.get("load_model", False),
