@@ -79,7 +79,7 @@ class MPC(Controller):
         """
         super().__init__(params)
         print(params.env.observation_space.shape)
-        self.dO, self.dU = params.env.observation_space.shape[0], 7
+        self.dO, self.dU = 240, 7
         self.ac_ub, self.ac_lb = params.env.action_space.high, params.env.action_space.low
         self.ac_ub = np.minimum(self.ac_ub, params.get("ac_ub", self.ac_ub))
         self.ac_lb = np.maximum(self.ac_lb, params.get("ac_lb", self.ac_lb))
